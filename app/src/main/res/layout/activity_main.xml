@@ -4,18 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".MainActivity">
+    tools:context=".ui.view.MainActivity">
 
-    <TextView
-        android:id="@+id/textview"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/image_cardView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="59dp"
-        android:text="Hello World!"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mescid_icon" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/ruler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/image_cardView"
+        app:layout_constraintTop_toTopOf="@id/image_cardView" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardview_header"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/white"
+        android:elevation="50dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintTop_toTopOf="@id/ruler">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mescid-i Nebevi" />
+
+            <TextView
+                android:id="@+id/time_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Öğle Namazına 1 saat kaldı" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylerview_times"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardview_header" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
