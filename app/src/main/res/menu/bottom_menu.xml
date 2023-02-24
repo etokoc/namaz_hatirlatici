@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:checked="true"
+        android:icon="@drawable/ic_baseline_home"
+        android:title="Anasayfa" />
+    <item
+        android:id="@+id/kaaba"
+        android:icon="@drawable/kaaba"
+        android:title="Kabe" />
+    <item
+        android:id="@+id/others"
+        android:icon="@drawable/ic_baseline_location_on_"
+        android:title="Otherl" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline_settings"
+        android:title="Ayarlar" />
+
+</menu>

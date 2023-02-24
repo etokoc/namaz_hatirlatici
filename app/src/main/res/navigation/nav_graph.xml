@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/home">
 
+    <fragment
+        android:id="@+id/home"
+        android:name="com.ertugrul.myjava.ui.view.fragment.MainScreen"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" />
+    <fragment
+        android:id="@+id/kaaba"
+        android:name="com.ertugrul.myjava.ui.view.fragment.KabaaFragment"
+        android:label="fragment_kabaa"
+        tools:layout="@layout/fragment_kabaa" />
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.ertugrul.myjava.ui.view.fragment.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/others"
+        android:name="com.ertugrul.myjava.ui.view.fragment.OtherFragment"
+        android:label="fragment_other"
+        tools:layout="@layout/fragment_other" />
 </navigation>
