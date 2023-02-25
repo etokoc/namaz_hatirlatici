@@ -6,8 +6,10 @@ import androidx.lifecycle.MutableLiveData;
 import com.ertugrul.myjava.data.api.ApiService;
 import com.ertugrul.myjava.data.model.LocalEzanRootItem;
 import com.ertugrul.myjava.data.repository.MainRepository;
+import com.ertugrul.myjava.utils.Extentions;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.inject.Inject;
 
@@ -44,5 +46,7 @@ public class MainViewModel extends androidx.lifecycle.ViewModel {
         mainRepository.getTimesFromCoordinates(lat, lng, date, days, timezone, apiService, mutableLiveData_LocalEzanTime);
         return _liveData_LocalEzanTime;
     }
+
+
 
 }
