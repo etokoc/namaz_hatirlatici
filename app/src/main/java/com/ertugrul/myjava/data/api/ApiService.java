@@ -14,6 +14,6 @@ public interface ApiService {
     @GET(Constants.GET_REGION + "Germany")
     Call<ArrayList<String>> getCountryCitys();
 
-    @GET("timesFromCoordinates?")
+    @GET("timesFromCoordinates")
     Call<LocalEzanRootItem> getTimesFromCoordinates(@Query("lat") String lat, @Query("lng") String lng, @Query("date") String date, @Query("days") String days, @Query("timezoneOffset") String timeZone);
 }

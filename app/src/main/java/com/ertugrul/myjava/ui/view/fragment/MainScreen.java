@@ -22,14 +22,9 @@ public class MainScreen extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        mViewModel = new ViewModelProvider(this).get(MainScreenViewModel.class);
         binding = FragmentMainScreenBinding.inflate(inflater, container, false);
         return binding.getRoot();
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(MainScreenViewModel.class);
     }
 
     @Override
@@ -44,8 +39,12 @@ public class MainScreen extends Fragment {
         String todayName = String.format(getResources().getString(R.string.today_header), mViewModel.getTodayName());
         binding.txtTodayTitle.setText(todayName);
 
+        //Hicri ve normal tarihi alma
         String date = String.format(getResources().getString(R.string.today_date), mViewModel.getDate(), mViewModel.getHijraDate());
         binding.txtDate.setText(date);
+
+        //Saati alma
+        binding.txtHour.setText(mViewModel.getHour());
     }
 
     private void initListener() {

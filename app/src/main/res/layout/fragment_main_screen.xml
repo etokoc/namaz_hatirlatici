@@ -95,6 +95,7 @@
                         android:text="Hicr" />
 
                     <TextView
+                        android:id="@+id/txt_hour"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

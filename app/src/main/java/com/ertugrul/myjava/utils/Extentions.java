@@ -2,6 +2,7 @@ package com.ertugrul.myjava.utils;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.chrono.HijrahDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
@@ -44,5 +45,14 @@ public class Extentions {
             date = Calendar.getInstance().getTime();
             return format.format(date);
         }
+    }
+
+    public static String getHour() {
+        String time = "12:00";
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+            time = dateTimeFormatter.format(LocalTime.now());
+        }
+        return time;
     }
 }

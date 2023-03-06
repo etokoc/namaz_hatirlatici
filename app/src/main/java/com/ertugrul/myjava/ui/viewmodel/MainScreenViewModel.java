@@ -13,11 +13,18 @@ public class MainScreenViewModel extends ViewModel {
         return Extentions.getDateWithIndex(dayIndex);
     }
 
-    public String getDate(){
+    public String getDate() {
         return Extentions.getDate();
 
 
-    }public String getHijraDate(){
+    }
+
+    public String getHijraDate() {
         return Extentions.getHijraDate();
     }
+
+    public String getHour() {
+        return Extentions.getHour();
+    }
 }
+
