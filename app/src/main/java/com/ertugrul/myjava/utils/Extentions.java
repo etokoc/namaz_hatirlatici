@@ -1,5 +1,6 @@
 package com.ertugrul.myjava.utils;
 
+import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -14,10 +15,11 @@ public class Extentions {
     /**
      * Index ile gün adlarını alma
      */
-    public static String getDateWithIndex(Integer dayIndex) {
-        if (dayIndex != null && dayIndex < 7 && dayIndex > -1) {
-            return DaysEnum.values()[dayIndex].name();
-        } else return DaysEnum.CUMA.name();
+    public static String getDateWithIndex() {
+
+        Format format = new SimpleDateFormat("EEEE");
+        String todayName = format.format(new Date());
+    return todayName;
     }
 
     /**

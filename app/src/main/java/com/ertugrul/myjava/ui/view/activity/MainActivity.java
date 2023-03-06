@@ -67,15 +67,14 @@ public class MainActivity extends AppCompatActivity {
 //        mainViewModel.getTimesFromCoordinates("39.91987", "32.85427", "2023-10-29", "3", "180")
 //                .observe(this, items -> Toast.makeText(this, items.times.time1.get(0), Toast.LENGTH_SHORT).show());
 
-        mainViewModel.getTimesFromCoordinates("39.91987", "32.85427", "2023-10-29", "3", "180").observe(this, new Observer<NetworkResult<LocalEzanRootItem>>() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
+        mainViewModel.getTimesFromCoordinates("39.964151", "32.580915", "2023-6-3", "3", "180").observe(this, new Observer<NetworkResult<LocalEzanRootItem>>() {
             @Override
             public void onChanged(NetworkResult<LocalEzanRootItem> localEzanRootItemNetworkResult) {
                 Toast.makeText(MainActivity.this, "in", Toast.LENGTH_SHORT).show();
                 if (localEzanRootItemNetworkResult instanceof NetworkResult.Success<LocalEzanRootItem>) {
                     LocalEzanRootItem data = localEzanRootItemNetworkResult.get_data();
                     ArrayList<String> keys = new ArrayList<>(data.getTimes.keySet());
-                    String result = Arrays.stream(Objects.requireNonNull(data.getTimes.get(keys.get(0)))).iterator().next();
+                    String result = Arrays.toString(data.getTimes.get(keys.get(0)));
                     Log.e("ETOLOG", "onChanged: " + result);
                 } else if (localEzanRootItemNetworkResult instanceof NetworkResult.Error<LocalEzanRootItem>) {
 
